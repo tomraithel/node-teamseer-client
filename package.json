@@ -21,6 +21,7 @@
   "dependencies": {
     "babel": "^6.1.18",
     "babel-register": "^6.2.0",
+    "dotenv": "^1.2.0",
     "rx": "^4.0.7",
     "rx-node": "^1.0.1",
     "soap": "^0.11.0"
