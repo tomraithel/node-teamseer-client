@@ -92,8 +92,8 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 
 ## Tests
 
-In order to run the tests, make sure that the `.env` file within the root directory is set up correctly. (see
-.env.example as reference)
+In order to run the tests, make sure that the `.env` file within the root directory is set up correctly (see
+`.env.example` as reference).
 
 ## Note
 
