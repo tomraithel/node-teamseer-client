@@ -10,14 +10,13 @@ chai.use(chaiAsPromised);
 var Rx = require('rx');
 
 var Client = require('../lib/client');
-var SoapAdapter = require('../lib/adapters/soap');
-
 
 
 describe('Client', function() {
 
 	var client;
 	var conf;
+	var mockedAdapter;
 
 	beforeEach(function() {
 		conf = {
@@ -25,7 +24,22 @@ describe('Client', function() {
 			companyKey: 'mykey',
 			apiVersion: '1_0_1'
 		};
-		client = new Client(conf, {});
+
+		mockedAdapter = {
+			authenticate: sinon.spy(function() {
+				return Rx.Observable.just({
+					value: true,
+					cookie: 'PHPSESSID=123456'
+				});
+			}),
+			getActiveUsers: sinon.spy(function() {
+				return Rx.Observable.just(['knut@test.com']);
+			}),
+			getRecordsFor: sinon.spy(function() {
+				return Rx.Observable.just(['2015-10-01', '2015-10-02', '2015-10-03']);
+			})
+		};
+		client = new Client(conf, mockedAdapter);
 	});
 
 
@@ -38,6 +52,7 @@ describe('Client', function() {
 			expect(client.getCompanyId()).to.equal(123);
 			expect(client.getCompanyKey()).to.equal('mykey');
 			expect(client.getApiVersion()).to.equal('1_0_1');
+			expect(client.getAdapter()).to.equal(mockedAdapter);
 		});
 	});
 
@@ -64,39 +79,31 @@ describe('Client', function() {
 		});
 	});
 
-	describe('#getRecordsByUser', function() {
-		var client;
-		var mock;
-
-		beforeEach(function() {
-			mock = {
-				authenticate: sinon.spy(function() {
-					return Rx.Observable.just({
-						value: true,
-						cookie: 'PHPSESSID=123456'
-					});
-				}),
-				getRecordsFor: sinon.spy(function() {
-					return Rx.Observable.just(['2015-10-01', '2015-10-02', '2015-10-03']);
-				})
-			};
-			client = new Client(conf, mock);
-		});
-
+	describe('#getAuthStream', function() {
 		it('should call authenticate on the adapter if not authenticated', function () {
-			client.getRecordsByUser();
-			expect(mock.authenticate).to.have.been.calledWith(conf);
+			client.getAuthStream();
+			expect(mockedAdapter.authenticate).to.have.been.calledWith(conf);
 		});
 
 		it('should not call authenticate on the adapter if authenticated', function () {
 			client.setAuth(new Date());
-			client.getRecordsByUser();
-			expect(mock.authenticate).to.not.have.been.called;
+			client.getAuthStream();
+			expect(mockedAdapter.authenticate).to.not.have.been.called;
 		});
+	});
 
+	describe('#getActiveUsers', function() {
+		it('should call the getActiveUsers method on the adapter', function (done) {
+			var promise = client.getActiveUsers();
+			expect(mockedAdapter.getActiveUsers).to.have.been.called;
+			expect(promise).to.eventually.deep.equal(['knut@test.com']).notify(done);
+		});
+	});
+
+	describe('#getRecordsByUser', function() {
 		it('should call the getRecordsFor method on the adapter', function (done) {
 			var promise = client.getRecordsByUser('tom', '2015-10-01', '2015-12-01');
-			expect(mock.getRecordsFor).to.have.been.calledWith({
+			expect(mockedAdapter.getRecordsFor).to.have.been.calledWith({
 				userIdentifier: 'tom',
 				fromDate: '2015-10-01',
 				toDate: '2015-12-01'
