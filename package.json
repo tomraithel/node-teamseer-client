@@ -16,7 +16,10 @@
   "devDependencies": {
     "babel-core": "^6.2.1",
     "chai": "^3.4.1",
-    "mocha": "^2.3.4"
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "babel": "^6.1.18",
