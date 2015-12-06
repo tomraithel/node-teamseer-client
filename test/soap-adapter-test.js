@@ -7,7 +7,7 @@ var validWsdl = 'https://www.teamseer.com/services/soap/coreapi/1_0_1/teamseer_c
 
 describe('SoapApiInterface', function() {
 
-	return; // Disabled
+	//return; // Disabled
 
 	// Give us a little bit more time - mocha has a default of 2000ms before
 	// tests exceed timeout
