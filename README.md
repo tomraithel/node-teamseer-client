@@ -3,10 +3,9 @@
 A simple Node client for the teamseer.com API.
 
 Note: This project has been developed for personal needs and therefore has no demand to be feature-complete.
-I used some libraries I was interested into and wanted to play with (Babel + RxJs) - therefore the
-footprint of dependencies is rather long.
+I used RxJs because I wanted to play with - it´ my first project with this library so maybe I´ doing something stupid :)
 
-**Not every thing is tested yet - Please use this library at your own risk!**
+**Not every thing is tested and documented yet - Please use this library at your own risk!**
 
 ## Api coverage
 

@@ -4,8 +4,8 @@
   "description": "A node client for teamseer api",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*-test.js --compilers js:babel-register",
-    "testwatch": "./node_modules/mocha/bin/mocha --compilers js:babel-register test/*-test.js -w"
+    "test": "./node_modules/mocha/bin/mocha test/*-test.js",
+    "testwatch": "./node_modules/mocha/bin/mocha test/*-test.js -w"
   },
   "keywords": [
     "teamseer",
@@ -14,19 +14,15 @@
   "author": "thomas.raithel@aoe.com",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.2.1",
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.3.4",
     "sinon": "^1.17.2",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "dotenv": "^1.2.0"
   },
   "dependencies": {
-    "babel": "^6.1.18",
-    "babel-register": "^6.2.0",
-    "dotenv": "^1.2.0",
     "rx": "^4.0.7",
-    "rx-node": "^1.0.1",
     "soap": "^0.11.0"
   }
 }

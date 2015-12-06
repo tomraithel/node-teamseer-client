@@ -1,6 +1,5 @@
 'use strict';
 
-require("babel-register");
 var Client = require('./lib/client');
 var SoapAdapter = require('./lib/adapters/soap');
 
