@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tomraithel/teamseer-node-client.svg)](https://travis-ci.org/tomraithel/teamseer-node-client)
 
-A simple Node client for the teamseer.com API.
+A simple Node client for the [teamseer.com](http://www.teamseer.com/) SOAP API.
 
 ## Api coverage
 
