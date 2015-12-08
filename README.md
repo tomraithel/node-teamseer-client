@@ -35,18 +35,18 @@ client.getRecordsByUser('anna.miller@example.com', '2015-12-01', '2015-12-31').t
 	console.log(records);
 });
 
-Example output:
-
-[ '2015-12-21',
-  '2015-12-22',
-  '2015-12-23',
-  '2015-12-24',
-  '2015-12-25',
-  '2015-12-26',
-  '2015-12-28',
-  '2015-12-29',
-  '2015-12-30',
-  '2015-12-31' ]
+// Example output:
+//
+//	[ '2015-12-21',
+//		'2015-12-22',
+//		'2015-12-23',
+//		'2015-12-24',
+//		'2015-12-25',
+//		'2015-12-26',
+//		'2015-12-28',
+//		'2015-12-29',
+//		'2015-12-30',
+//		'2015-12-31' ]
 ```
 
 ### `client.getRecordsByUser` Get a list of all active users
@@ -60,14 +60,14 @@ client.getActiveUsers().then(function(records) {
 	console.log(records);
 });
 
-Example output:
-
-[ 'anna.miller@example.com',
-  'clemens.doe@example.com',
-  'tanja.jackson@example.com',
-  'timo.foo@example.com',
-  'anne.bar@example.com',
-  'linda.baz@example.com' ]
+// Example output:
+//
+// [ 'anna.miller@example.com',
+//	'clemens.doe@example.com',
+//	'tanja.jackson@example.com',
+//	'timo.foo@example.com',
+//	'anne.bar@example.com',
+//	'linda.baz@example.com' ]
 ```
 
 ## Full Example
@@ -82,21 +82,14 @@ var client = new teamseer.Client({
 }, new teamseer.adapters.Soap('https://www.teamseer.com/services/soap/coreapi/1_0_1/teamseer_core_api.wsdl'));
 
 client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(function(records) {
-	console.log("success");
-	console.log(records);
+	console.log("success", records);
 }, function(err) {
-	console.log("error");
-	console.log(err);
+	console.log("error", err);
 });
 ```
 
-## Tests
-
-In order to run the tests, make sure that the `.env` file within the root directory is set up correctly (see
-`.env.example` as reference).
-
 ## Note
 
-Note: This project has been developed for personal needs and therefore has no demand to be feature-complete.
+This project has been developed for personal needs and therefore has no demand to be feature-complete.
 I used RxJs because I wanted to play with - it´ my first project with this library, so if I´m doing something stupid,
 please let me know.
