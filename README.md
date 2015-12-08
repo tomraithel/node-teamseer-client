@@ -21,7 +21,7 @@ var client = new teamseer.Client({
 ```
 
 
-### `client.getRecordsByUser` Get records as array for one person
+### `getRecordsByUser` Get records as array for one person
 
 ```javascript
 /**
@@ -49,7 +49,7 @@ client.getRecordsByUser('anna.miller@example.com', '2015-12-01', '2015-12-31').t
 //		'2015-12-31' ]
 ```
 
-### `client.getRecordsByUser` Get a list of all active users
+### `getActiveUsers` Get a list of all active users
 
 ```javascript
 /**
