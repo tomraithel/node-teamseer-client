@@ -1,5 +1,7 @@
 # teamseer-node-client
 
+[![Build Status](https://travis-ci.org/tomraithel/teamseer-node-client.svg)](https://travis-ci.org/tomraithel/teamseer-node-client)
+
 A simple Node client for the teamseer.com API.
 
 ## Api coverage
