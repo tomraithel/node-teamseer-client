@@ -12,7 +12,7 @@ chai.use(chaiAsPromised);
 describe('SoapApiInterface', function() {
 
 	// We mock everything - therefore there is no need to wait for long timeouts
-	this.timeout(1);
+	this.timeout(200);
 
 	var soapAdapter;
 	var mockedSoapClient;
