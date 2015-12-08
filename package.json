@@ -1,18 +1,16 @@
 {
   "name": "teamseer-node-client",
   "version": "1.0.0",
-  "description": "A node client for teamseer api",
+  "description": "A node client for teamseer.com SOAP API",
   "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*-test.js",
-    "testwatch": "./node_modules/mocha/bin/mocha test/*-test.js -w"
+  "directories": {
+    "doc": "doc",
+    "test": "test"
   },
-  "keywords": [
-    "teamseer",
-    "api"
-  ],
-  "author": "thomas.raithel@aoe.com",
-  "license": "ISC",
+  "dependencies": {
+    "rx": "^4.0.7",
+    "soap": "^0.11.0"
+  },
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
@@ -20,8 +18,23 @@
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   },
-  "dependencies": {
-    "rx": "^4.0.7",
-    "soap": "^0.11.0"
-  }
+  "scripts": {
+	"test": "./node_modules/mocha/bin/mocha test/*-test.js",
+	"testwatch": "./node_modules/mocha/bin/mocha test/*-test.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomraithel/teamseer-node-client.git"
+  },
+  "keywords": [
+    "teamseer",
+    "api",
+    "soap"
+  ],
+  "author": "t.raithel@googlemail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomraithel/teamseer-node-client/issues"
+  },
+  "homepage": "https://github.com/tomraithel/teamseer-node-client#readme"
 }
