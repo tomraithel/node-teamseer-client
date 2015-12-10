@@ -1,6 +1,6 @@
 # teamseer-node-client
 
-[![Build Status](https://travis-ci.org/tomraithel/teamseer-node-client.svg)](https://travis-ci.org/tomraithel/teamseer-node-client) [![npm version](https://badge.fury.io/js/teamseer-node-client.png)](https://badge.fury.io/js/teamseer-node-client)
+[![Build Status](https://travis-ci.org/tomraithel/teamseer-node-client.svg)](https://travis-ci.org/tomraithel/teamseer-node-client) [![npm version](https://badge.fury.io/js/teamseer-node-client.svg)](https://badge.fury.io/js/teamseer-node-client)
 
 A simple Node client for the [teamseer.com](http://www.teamseer.com/) SOAP API.
 
