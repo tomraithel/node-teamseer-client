@@ -171,11 +171,28 @@ describe('SoapApiInterface', function() {
 				mockedSoapClient.getRecordsFor = sinon.spy(function(params, callback) {
 					callback(null, {
 						getRecordsForReturn: {
-							item: [{
-								date: {$value: '2015-10-01'}
-							}, {
-								date: {$value: '2015-10-02'}
-							}]
+							item: [
+								{
+									attributes: {'xsi:type': 'ns1:DayActivityAPI'},
+									categoryArr: {attributes: {}},
+									date: {attributes: {}, '$value': '2015-12-21'},
+									hasNotes: {attributes: {}, '$value': true},
+									needsApproval: {attributes: {}, '$value': true},
+									statusStr: {attributes: {}, '$value': '22'},
+									typeStr: {attributes: {}, '$value': '02'},
+									userIdentifier: {attributes: {}, '$value': 'johndoe@test.com'}
+								},
+								{
+									attributes: {'xsi:type': 'ns1:DayActivityAPI'},
+									categoryArr: {attributes: {}},
+									date: {attributes: {}, '$value': '2015-12-22'},
+									hasNotes: {attributes: {}, '$value': false},
+									needsApproval: {attributes: {}, '$value': false},
+									statusStr: {attributes: {}, '$value': '12'},
+									typeStr: {attributes: {}, '$value': '00'},
+									userIdentifier: {attributes: {}, '$value': 'johndoe@test.com'}
+								}
+							]
 						}
 					});
 				});
@@ -189,7 +206,21 @@ describe('SoapApiInterface', function() {
 					'Cookie': cookie
 				}).subscribe(
 					function (data) {
-						expect(data).to.deep.equal(['2015-10-01', '2015-10-02']);
+						expect(data).to.deep.equal([{
+							date: '2015-12-21',
+							hasNotes: true,
+							needsApproval: true,
+							status: '22',
+							type: '02',
+							userIdentifier: 'johndoe@test.com'
+						}, {
+							date: '2015-12-22',
+							hasNotes: false,
+							needsApproval: false,
+							status: '12',
+							type: '00',
+							userIdentifier: 'johndoe@test.com'
+						}]);
 						done();
 					}
 				);
