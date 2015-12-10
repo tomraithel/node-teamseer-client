@@ -25,7 +25,7 @@ var client = new teamseer.Client({
 	companyId: '12345',
 	companyKey: 'abc123fghi456',
 	apiVersion: '1_0_1'
-}, new teamseer.adapters.Soap('https://www.teamseer.com/services/soap/coreapi/1_0_1/teamseer_core_api.wsdl'));
+});
 ```
 
 
@@ -87,7 +87,7 @@ var client = new teamseer.Client({
 	companyId: '12345',
 	companyKey: 'abc123fghi456',
 	apiVersion: '1_0_1'
-}, new teamseer.adapters.Soap('https://www.teamseer.com/services/soap/coreapi/1_0_1/teamseer_core_api.wsdl'));
+});
 
 client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(function(records) {
 	console.log("success", records);
