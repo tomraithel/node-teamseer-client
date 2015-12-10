@@ -44,17 +44,24 @@ client.getRecordsByUser('anna.miller@example.com', '2015-12-01', '2015-12-31').t
 });
 
 // Example output:
-//
-//	[ '2015-12-21',
-//		'2015-12-22',
-//		'2015-12-23',
-//		'2015-12-24',
-//		'2015-12-25',
-//		'2015-12-26',
-//		'2015-12-28',
-//		'2015-12-29',
-//		'2015-12-30',
-//		'2015-12-31' ]
+//[
+//	{
+//		date: '2015-12-21',
+//		hasNotes: true,
+//		needsApproval: true,
+//		status: '22',
+//		type: '00',
+//		userIdentifier: 'anna.miller@example.com'
+//	},
+//	{
+//		date: '2015-12-22',
+//		hasNotes: false,
+//		needsApproval: true,
+//		status: '22',
+//		type: '00',
+//		userIdentifier: 'anna.miller@example.com'
+//	}
+//]
 ```
 
 ### `getActiveUsers` Get a list of all active users
@@ -95,6 +102,13 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 	console.log("error", err);
 });
 ```
+
+## Changelog
+
+`1.0.0` Initial release
+`1.0.1` Fixed authentication bug
+`1.1.0` Changed response for `getRecordsByUser` to reflect attributes of SOAP response
+
 
 ## Note
 
