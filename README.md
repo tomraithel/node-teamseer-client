@@ -105,9 +105,9 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 
 ## Changelog
 
-`1.0.0` Initial release
-`1.0.1` Fixed authentication bug
-`1.1.0` Changed response for `getRecordsByUser` to reflect attributes of SOAP response
+- `1.0.0` Initial release
+- `1.0.1` Fixed authentication bug
+- `1.1.0` Changed response for `getRecordsByUser` to reflect attributes of SOAP response
 
 
 ## Note
