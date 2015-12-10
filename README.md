@@ -4,6 +4,12 @@
 
 A simple Node client for the [teamseer.com](http://www.teamseer.com/) SOAP API.
 
+## Installation
+
+```
+npm install teamseer-node-client
+```
+
 ## Api coverage
 
 Only `getActiveUsers` and `getRecordsByUser` are implemented.
