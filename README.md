@@ -1,13 +1,13 @@
-# teamseer-node-client
+# node-teamseer-client
 
-[![Build Status](https://travis-ci.org/tomraithel/teamseer-node-client.svg)](https://travis-ci.org/tomraithel/teamseer-node-client) [![npm version](https://badge.fury.io/js/teamseer-node-client.svg)](https://badge.fury.io/js/teamseer-node-client)
+[![Build Status](https://travis-ci.org/tomraithel/node-teamseer-client.svg)](https://travis-ci.org/tomraithel/node-teamseer-client) [![npm version](https://badge.fury.io/js/node-teamseer-client.svg)](https://badge.fury.io/js/node-teamseer-client)
 
 A simple Node client for the [teamseer.com](http://www.teamseer.com/) SOAP API.
 
 ## Installation
 
 ```
-npm install teamseer-node-client
+npm install teamseer-client
 ```
 
 ## Api coverage
@@ -19,7 +19,7 @@ Only `getActiveUsers` and `getRecordsByUser` are implemented.
 ### Creating a client
 
 ```javascript
-var teamseer = require('teamseer-node-client');
+var teamseer = require('teamseer-client');
 
 var client = new teamseer.Client({
 	companyId: '12345',
@@ -88,7 +88,7 @@ client.getActiveUsers().then(function(records) {
 ## Full Example
 
 ```javascript
-var teamseer = require('teamseer-node-client');
+var teamseer = require('teamseer-client');
 
 var client = new teamseer.Client({
 	companyId: '12345',
@@ -106,8 +106,6 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 ## Changelog
 
 - `1.0.0` Initial release
-- `1.0.1` Fixed authentication bug
-- `1.1.0` Changed response for `getRecordsByUser` to reflect attributes of SOAP response
 
 
 ## Note
