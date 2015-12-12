@@ -111,5 +111,5 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 
 [npm-image]: https://img.shields.io/npm/v/teamseer-client.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/teamseer-client
-[travis-image]: https://img.shields.io/travis/tj/teamseer-client.svg?style=flat-square
-[travis-url]: https://travis-ci.org/tj/teamseer-client
+[travis-image]: https://img.shields.io/travis/tj/node-teamseer-client.svg?style=flat-square
+[travis-url]: https://travis-ci.org/tj/node-teamseer-client
