@@ -7,7 +7,7 @@ var expect = chai.expect;
 chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
-var Rx = require('rx');
+var Rx = require('rxjs/Rx');
 
 var Client = require('../lib/client');
 
@@ -27,16 +27,16 @@ describe('Client', function() {
 
 		mockedAdapter = {
 			authenticate: sinon.spy(function() {
-				return Rx.Observable.just({
+				return Rx.Observable.of({
 					value: true,
 					cookie: 'PHPSESSID=123456'
 				});
 			}),
 			getActiveUsers: sinon.spy(function() {
-				return Rx.Observable.just(['knut@test.com']);
+				return Rx.Observable.of(['knut@test.com']);
 			}),
 			getRecordsFor: sinon.spy(function() {
-				return Rx.Observable.just(['2015-10-01', '2015-10-02', '2015-10-03']);
+				return Rx.Observable.of(['2015-10-01', '2015-10-02', '2015-10-03']);
 			})
 		};
 		client = new Client(conf, mockedAdapter);
