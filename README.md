@@ -108,7 +108,8 @@ client.getRecordsByUser('youremail@test.com', '2015-12-01', '2015-12-31').then(f
 ## Changelog
 
 - `1.0.0` Initial release
-- `1.0.1` Bugfix for restult lists with only one item
+- `1.0.1` Using RxJs 5 beta
+- `1.0.2` Bugfix for result lists with only one item
 
 ## License: ISC
 
