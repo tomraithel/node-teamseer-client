@@ -1,6 +1,6 @@
 {
   "name": "teamseer-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node client for teamseer.com SOAP API",
   "main": "index.js",
   "directories": {
